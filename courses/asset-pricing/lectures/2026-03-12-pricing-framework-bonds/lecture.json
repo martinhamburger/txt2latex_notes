@@ -1,0 +1,13 @@
+{
+  "course_key": "asset-pricing",
+  "lecture_title": "资产定价的基本框架、利率债基础与市场摩擦",
+  "lecture_date": "2026-03-12",
+  "source_zip": "courses/asset-pricing/incoming/transcripts/312资产定价-文本.zip",
+  "transcript": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/transcript.txt",
+  "transcript_raw": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/transcript_raw.txt",
+  "transcript_clean": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/transcript_clean.txt",
+  "notes_export": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/notes_export.txt",
+  "handwritten_dir": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/handwritten",
+  "textbook_dir": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/sources/textbook",
+  "main_tex": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/main.tex"
+}
