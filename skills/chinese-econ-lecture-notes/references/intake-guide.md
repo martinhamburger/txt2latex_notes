@@ -2,7 +2,10 @@
 
 ## Fixed Drop Location
 
-Use `inbox/dropbox/` as the fixed place where new materials arrive.
+Use one of these fixed drop locations:
+
+- `inbox/dropbox/`: the general intake path for transcripts, zips, screenshots, and mixed materials
+- `pdf/incoming/`: the shallow intake path for GoodNotes PDFs, textbook PDFs, and slide PDFs
 
 After files are placed there, run:
 
@@ -19,6 +22,23 @@ The script will:
 5. Move unclear files into `inbox/review/`.
 
 Use `--dry-run` to preview the routing plan first.
+
+## Shallow PDF Access
+
+If you only care about PDF in and PDF out, use:
+
+- `pdf/incoming/` to drop new PDF materials
+- `pdf/outgoing/` to quickly open compiled lecture PDFs
+
+After a lecture PDF is compiled, run:
+
+```bash
+python skills/chinese-econ-lecture-notes/scripts/refresh_pdf_outbox.py --clean
+```
+
+This copies each lecture `main.pdf` into a shallow top-level PDF folder with names like:
+
+- `asset-pricing--2026-03-12-pricing-framework-bonds.pdf`
 
 ## Recommended Naming
 
@@ -50,6 +70,8 @@ Examples:
 
 - `资产定价-第03讲-goodnotes笔记.pdf`
 - `计量经济学-OLS-goodnotes笔记.pdf`
+
+If you want the shortest path, drop GoodNotes PDFs directly into `pdf/incoming/`.
 
 ## Transcript Recommendation
 

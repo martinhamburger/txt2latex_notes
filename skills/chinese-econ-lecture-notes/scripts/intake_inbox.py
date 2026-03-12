@@ -289,11 +289,14 @@ def move_or_copy(source: Path, destination: Path, keep_originals: bool) -> None:
         shutil.move(str(source), str(destination))
 
 
-def collect_files(dropbox: Path) -> list[Path]:
-    files = []
-    for path in dropbox.rglob("*"):
-        if path.is_file() and path.name != ".gitkeep":
-            files.append(path)
+def collect_files(paths: list[Path]) -> list[Path]:
+    files: list[Path] = []
+    for root in paths:
+        if not root.exists():
+            continue
+        for path in root.rglob("*"):
+            if path.is_file() and path.name != ".gitkeep":
+                files.append(path)
     return sorted(files)
 
 
@@ -313,16 +316,18 @@ def main() -> None:
     args = parse_args()
     repo_root = args.repo_root.resolve()
     dropbox = repo_root / "inbox" / "dropbox"
+    pdf_incoming = repo_root / "pdf" / "incoming"
     review_dir = repo_root / "inbox" / "review"
     processed_dir = repo_root / "inbox" / "processed"
 
     dropbox.mkdir(parents=True, exist_ok=True)
+    pdf_incoming.mkdir(parents=True, exist_ok=True)
     review_dir.mkdir(parents=True, exist_ok=True)
     processed_dir.mkdir(parents=True, exist_ok=True)
 
-    files = collect_files(dropbox)
+    files = collect_files([dropbox, pdf_incoming])
     if not files:
-        print("No files found in inbox/dropbox.")
+        print("No files found in inbox/dropbox or pdf/incoming.")
         return
 
     results: list[IntakeResult] = []

@@ -12,7 +12,7 @@ Use this skill to build lecture notes that are readable in Chinese, mathematical
 ## Quick Start
 
 1. Identify the course and check whether a course workspace exists under `courses/`.
-2. If new files have been dropped into `inbox/dropbox/`, run `scripts/intake_inbox.py` first.
+2. If new files have been dropped into `inbox/dropbox/` or `pdf/incoming/`, run `scripts/intake_inbox.py` first.
 3. If the repository has not been scaffolded yet, run `scripts/bootstrap_notes_repo.py`.
 4. If the lecture folder does not exist, run `scripts/new_lecture.py --course <course-key> --title "<lecture title>"`.
 5. If the main input is a raw `.txt` transcript, optionally normalize it with `scripts/clean_transcript.py`.
@@ -81,14 +81,15 @@ Every note should aim for:
 - `bootstrap_notes_repo.py`: create the reusable course directory layout and course metadata files.
 - `new_lecture.py`: create a lecture workspace and a starter `.tex` file from the bundled template.
 - `clean_transcript.py`: lightly normalize raw transcript text before drafting.
-- `intake_inbox.py`: route new files from `inbox/dropbox/` into the correct course and material folders.
+- `intake_inbox.py`: route new files from `inbox/dropbox/` or `pdf/incoming/` into the correct course and material folders.
+- `refresh_pdf_outbox.py`: copy compiled lecture PDFs into a shallow top-level `pdf/outgoing/` folder.
 
 ### references/
 
 - `workflow.md`: source reconciliation rules for transcript, handwriting, textbook, and screenshots.
 - `latex-style.md`: the house style for Chinese LaTeX notes.
 - `course-conventions.md`: notation and structure defaults by course.
-- `intake-guide.md`: recommended file naming and handoff formats, especially for GoodNotes and transcript exports.
+- `intake-guide.md`: recommended file naming and handoff formats, especially for GoodNotes, PDFs, and transcript exports.
 - `github-sources.md`: upstream GitHub projects that informed this skill.
 
 ### assets/
