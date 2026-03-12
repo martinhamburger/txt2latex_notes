@@ -1,0 +1,13 @@
+{
+  "course_key": "intermediate-microeconomics",
+  "title_zh": "中级微观经济学",
+  "title_en": "Intermediate Microeconomics",
+  "default_engine": "xelatex",
+  "style": "clean-minimal",
+  "recommended_sections": [
+    "preferences and constraints",
+    "optimization",
+    "comparative statics",
+    "economic intuition"
+  ]
+}

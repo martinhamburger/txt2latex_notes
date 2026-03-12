@@ -1,0 +1,83 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  hidelinks
+}
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\plim}{plim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\given}{\,\middle|\,}
+
+\title{ {{COURSE_TITLE_ZH}} \\ \large {{LECTURE_TITLE}} }
+\author{}
+\date{{{LECTURE_DATE}}}
+
+\begin{document}
+
+\maketitle
+
+\section{本讲概览}
+
+\begin{itemize}
+{{SUMMARY_ITEMS}}
+\end{itemize}
+
+\section{核心内容}
+
+% Use this section for the main lecture flow.
+% Split into subsections when the logic clearly changes.
+
+\subsection{问题背景}
+
+% Summarize the motivating question in concise Chinese prose.
+
+\subsection{模型设定或概念框架}
+
+% State assumptions, objects, and notation here.
+
+\section{推导与证明}
+
+% Put core derivations here. Use align for multi-line math.
+
+\section{经济学直觉与结论}
+
+% Explain what the formulas mean and why the result matters.
+
+\section{遗留问题}
+
+\begin{itemize}
+  \item 若有符号、板书或图形仍需核对，在这里列出。
+\end{itemize}
+
+\end{document}

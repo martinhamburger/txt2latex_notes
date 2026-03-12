@@ -1,0 +1,13 @@
+{
+  "course_key": "asset-pricing",
+  "title_zh": "资产定价",
+  "title_en": "Asset Pricing",
+  "default_engine": "xelatex",
+  "style": "clean-minimal",
+  "recommended_sections": [
+    "pricing object",
+    "equilibrium relation",
+    "intuition",
+    "applications"
+  ]
+}

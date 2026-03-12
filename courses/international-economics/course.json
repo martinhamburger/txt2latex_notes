@@ -1,0 +1,13 @@
+{
+  "course_key": "international-economics",
+  "title_zh": "国际经济学",
+  "title_en": "International Economics",
+  "default_engine": "xelatex",
+  "style": "clean-minimal",
+  "recommended_sections": [
+    "model setup",
+    "trade mechanism",
+    "comparative statics",
+    "policy or welfare implications"
+  ]
+}

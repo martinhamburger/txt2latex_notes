@@ -1,0 +1,13 @@
+{
+  "course_key": "econometrics",
+  "title_zh": "计量经济学",
+  "title_en": "Econometrics",
+  "default_engine": "xelatex",
+  "style": "clean-minimal",
+  "recommended_sections": [
+    "model setup",
+    "assumptions",
+    "derivation",
+    "interpretation"
+  ]
+}

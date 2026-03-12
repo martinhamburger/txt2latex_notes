@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chinese Econ Notes"
+  short_description: "Convert Chinese lecture materials into clean LaTeX notes"
+  default_prompt: "Turn these Chinese economics lecture materials into concise, well-structured LaTeX notes."
