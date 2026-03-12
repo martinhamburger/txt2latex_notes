@@ -12,13 +12,15 @@ Use this skill to build lecture notes that are readable in Chinese, mathematical
 ## Quick Start
 
 1. Identify the course and check whether a course workspace exists under `courses/`.
-2. If the repository has not been scaffolded yet, run `scripts/bootstrap_notes_repo.py`.
-3. If the lecture folder does not exist, run `scripts/new_lecture.py --course <course-key> --title "<lecture title>"`.
-4. If the main input is a raw `.txt` transcript, optionally normalize it with `scripts/clean_transcript.py`.
-5. Read `references/workflow.md` for source prioritization.
-6. Read `references/latex-style.md` before writing or editing the `.tex` file.
-7. Read `references/course-conventions.md` when notation or structure depends on the course.
-8. Use `assets/templates/lecture-note.tex` as the default LaTeX baseline unless the user provides another template.
+2. If new files have been dropped into `inbox/dropbox/`, run `scripts/intake_inbox.py` first.
+3. If the repository has not been scaffolded yet, run `scripts/bootstrap_notes_repo.py`.
+4. If the lecture folder does not exist, run `scripts/new_lecture.py --course <course-key> --title "<lecture title>"`.
+5. If the main input is a raw `.txt` transcript, optionally normalize it with `scripts/clean_transcript.py`.
+6. Read `references/workflow.md` for source prioritization.
+7. Read `references/latex-style.md` before writing or editing the `.tex` file.
+8. Read `references/course-conventions.md` when notation or structure depends on the course.
+9. Read `references/intake-guide.md` when the user asks how to hand materials over efficiently.
+10. Use `assets/templates/lecture-note.tex` as the default LaTeX baseline unless the user provides another template.
 
 ## Workflow
 
@@ -79,12 +81,14 @@ Every note should aim for:
 - `bootstrap_notes_repo.py`: create the reusable course directory layout and course metadata files.
 - `new_lecture.py`: create a lecture workspace and a starter `.tex` file from the bundled template.
 - `clean_transcript.py`: lightly normalize raw transcript text before drafting.
+- `intake_inbox.py`: route new files from `inbox/dropbox/` into the correct course and material folders.
 
 ### references/
 
 - `workflow.md`: source reconciliation rules for transcript, handwriting, textbook, and screenshots.
 - `latex-style.md`: the house style for Chinese LaTeX notes.
 - `course-conventions.md`: notation and structure defaults by course.
+- `intake-guide.md`: recommended file naming and handoff formats, especially for GoodNotes and transcript exports.
 - `github-sources.md`: upstream GitHub projects that informed this skill.
 
 ### assets/
