@@ -237,6 +237,17 @@ def classify_material_type(path: Path) -> tuple[str | None, str]:
     preview = read_text_preview(path) or read_zip_preview(path)
     combined = f"{text}\n{preview}"
 
+    if suffix in ZIP_EXTS:
+        names = "\n".join(zip_namelist(path))
+        names_lower = names.lower()
+        if score_keywords(combined, TRANSCRIPT_KEYWORDS) > 0 or re.search(r"\.(txt|md|srt|vtt)\b", names_lower):
+            return "transcripts", "Zip appears to contain transcript text."
+        if score_keywords(combined, HANDWRITTEN_KEYWORDS) > 0 and re.search(r"\.(png|jpg|jpeg|webp|bmp|pdf)\b", names_lower):
+            return "handwritten", "Zip appears to contain note images or exported note files."
+        if score_keywords(combined, TEXTBOOK_KEYWORDS) > 0:
+            return "textbook", "Filename suggests textbook, slides, or handout material."
+        return None, "Zip content type is ambiguous."
+
     if score_keywords(combined, HANDWRITTEN_KEYWORDS) > 0 and suffix in PDF_EXTS.union(IMAGE_EXTS, ZIP_EXTS):
         return "handwritten", "Filename suggests handwritten or GoodNotes material."
 
@@ -254,14 +265,6 @@ def classify_material_type(path: Path) -> tuple[str | None, str]:
 
     if suffix in PDF_EXTS:
         return "textbook", "PDF routed as textbook/handout by default."
-
-    if suffix in ZIP_EXTS:
-        names = "\n".join(zip_namelist(path))
-        if score_keywords(names, TRANSCRIPT_KEYWORDS) > 0 or ".txt" in names.lower():
-            return "transcripts", "Zip appears to contain transcript text."
-        if score_keywords(names, HANDWRITTEN_KEYWORDS) > 0 or re.search(r"\.(png|jpg|jpeg|pdf)\b", names.lower()):
-            return "handwritten", "Zip appears to contain note images or exported note files."
-        return None, "Zip content type is ambiguous."
 
     return None, "Unsupported file extension."
 

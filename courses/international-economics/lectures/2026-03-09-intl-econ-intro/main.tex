@@ -1,0 +1,163 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{hidelinks}
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\plim}{plim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\given}{\,\middle|\,}
+
+\title{ 国际经济学 \\ \large 国际经济学：导论与学习框架 }
+\author{}
+\date{2026-03-09}
+
+\begin{document}
+
+\maketitle
+
+\section{本讲概览}
+
+\textbf{资料来源说明}：本讲已整合 2026-03-09 的两份同日课堂转写。
+文中涉及“片段 A / 片段 B”仅用于标注内容来源顺序，不再单独拆分为多个输出文件。
+
+\begin{itemize}
+  \item 以人口结构、劳动年龄人口占比与生育率为切入点，讨论中国中长期增长面临的要素约束。
+  \item 用可支配收入分布、顶层收入份额等指标说明“增长”与“分配”需要同时被考察。
+  \item 回到增长核算框架，强调资本与劳动存在约束时，技术进步与市场规模扩展的重要性。
+  \item 结合居民消费占 GDP 比重和城乡一体化问题，解释“国内大循环”背后的经济逻辑。
+  \item 在课程衔接上引出国际贸易三大问题：贸易是否有利、谁与谁贸易、谁贸易什么。
+\end{itemize}
+
+\section{核心内容}
+
+\subsection*{片段映射（文内说明）}
+
+\begin{itemize}
+  \item 片段 A（同日早段转写）：人口结构、收入分配、内需与市场一体化。
+  \item 片段 B（同日后段转写）：僵尸企业、通缩传导、研发投入、贸易伙伴结构。
+\end{itemize}
+
+\subsection{从宏观指标看增长约束}
+
+本讲先做“现实扫描”。从课堂材料看，核心关注点并非单一的短期增速，而是支撑增速的结构条件：
+人口增长转负、劳动年龄人口占比下降、生育率持续偏低。若把增长理解为“总量蛋糕扩大”，
+则人口与年龄结构决定了分蛋糕的人数与劳动供给规模，也决定了潜在增速区间。
+
+课堂特别强调了国际对照：
+不同经济体在人口年龄结构、净移民和老龄化上的差异，会系统性影响其增长路径与政策工具选择。
+这意味着，分析中国增长目标时必须把人口变量内生化，而非把它当作外生常数。
+
+\subsection{课程方法：事实、模型与政策}
+
+导论讲的任务不是直接给出政策清单，而是建立一套工作流：
+先描述可观测事实，再给出最小可用模型，最后回到政策可行性。
+这一顺序有两个好处：
+一是避免“先有结论再找证据”；
+二是能把价值判断与实证判断分开讨论。
+
+\subsection{收入分配不是增长的附属问题}
+
+课程材料反复讨论了两个分配层面：
+一是分位组收入差距（例如高收入组与低收入组的倍数关系），
+二是顶层收入份额（Top income share）。
+
+这背后的课程立场很明确：
+若只看总量增长而忽略分配，内需扩张、社会稳定与技术扩散都会遇到约束。
+因此，“效率-公平”并不是抽象价值对立，而是宏观可持续增长的联立条件。
+
+\subsection{增长框架：要素约束下的技术与规模}
+
+把课堂逻辑抽象为生产函数可以写成
+\begin{equation}
+  Y = A K^{\alpha} L^{\beta}, \qquad \alpha,\beta > 0.
+\end{equation}
+
+其中，$K$ 为资本要素，$L$ 为劳动要素，$A$ 为技术效率。
+当资本积累放缓、劳动供给承压时，经济增长更依赖 $A$ 的提升（技术进步、组织效率、产业升级）。
+
+若对上式取对数微分，可得增长核算形式：
+\begin{equation}
+  g_Y \approx g_A + \alpha g_K + \beta g_L.
+\end{equation}
+
+课堂关于新能源、AI、研发强度（R\&D/GDP）与企业创新能力的讨论，
+本质上都在解释如何提升 $g_A$，以及如何通过制度安排把技术潜力转化为长期增长动能。
+
+\subsection{做大国内市场：从“总量”到“一体化”}
+
+课堂强调：中国市场“名义上很大”，但“有效需求与市场一体化程度”仍有提升空间。
+典型证据是居民最终消费占 GDP 比重偏低、城乡与区域之间仍存在分割。
+
+因此，所谓扩大内需，不只是刺激短期消费，
+更包括降低地区分割、提高要素流动性、提升城乡一体化水平，
+使国内市场真正形成规模经济优势。
+
+\section{推导与证明}
+
+\subsection{贸易课程的三大基本问题}
+
+本讲在结尾进入国际贸易主线，可归纳为三问：
+\begin{enumerate}
+  \item 贸易是否带来净收益（gains from trade）？
+  \item 谁与谁进行贸易（trade pattern）？
+  \item 各国分别出口和进口什么（what to trade）？
+\end{enumerate}
+
+  其中第二问可由引力模型直观刻画：
+\begin{equation}
+  X_{ij} = G \cdot \frac{Y_i^{\gamma} Y_j^{\delta}}{D_{ij}^{\theta}}, \qquad \theta > 0,
+\end{equation}
+这里 $X_{ij}$ 表示从 $i$ 到 $j$ 的贸易流，$Y_i,Y_j$ 是经济规模，$D_{ij}$ 为双边贸易成本（可由距离代理）。
+该式对应课堂中的两个经验判断：经济体量越大，双边贸易潜力越高；距离与制度摩擦越大，贸易流越小。
+
+  这一定义层面的引入，为下一讲的案例化讨论（邻近贸易、产业分工、政策冲击）提供统一基准。
+
+\section{经济学直觉与结论}
+
+本讲不是在“给出某个单一政策答案”，而是在建立一种分析顺序：
+先识别增长约束（人口、资本、技术、市场一体化），
+再用分配与效率的联立视角判断政策可持续性，
+最后进入贸易理论解释国际分工与双边关系。
+
+从学习方法上看，这也是国际经济学课程的典型路径：
+先有现实事实，再引入模型，再回到政策讨论。
+
+\section{遗留问题}
+
+\begin{itemize}
+  \item 下一讲可把“距离重要”进一步形式化为引力方程的对数线性估计，并讨论可识别性问题。
+  \item 本讲涉及的分配指标（分位组收入、Top income share）仍需补入更系统的数据表与时间序列图。
+  \item 城乡一体化与国内市场分割可结合具体制度变量（户籍、土地、社保可携带性）展开机制分析。
+\end{itemize}
+
+\end{document}

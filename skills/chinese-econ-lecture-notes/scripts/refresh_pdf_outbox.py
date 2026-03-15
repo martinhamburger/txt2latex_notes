@@ -25,8 +25,8 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def export_name(course_key: str, lecture_slug: str) -> str:
-    return f"{course_key}--{lecture_slug}.pdf"
+def export_name(course_key: str) -> str:
+    return f"{course_key}.pdf"
 
 
 def main() -> None:
@@ -40,17 +40,40 @@ def main() -> None:
             old_pdf.unlink()
 
     exported = []
-    for pdf_path in repo_root.glob("courses/*/lectures/*/main.pdf"):
-        course_key = pdf_path.parts[-4]
-        lecture_slug = pdf_path.parts[-2]
-        target_path = outgoing_dir / export_name(course_key, lecture_slug)
-        shutil.copy2(pdf_path, target_path)
+    courses_root = repo_root / "courses"
+    for course_dir in sorted(courses_root.glob("*")):
+        if not course_dir.is_dir():
+            continue
+
+        course_key = course_dir.name
+        canonical_pdf = course_dir / "output" / "pdf" / f"{course_key}-notes.pdf"
+        selected_pdf = None
+        source_type = None
+
+        if canonical_pdf.exists():
+            selected_pdf = canonical_pdf
+            source_type = "course_notes"
+        else:
+            lecture_pdfs = sorted(
+                course_dir.glob("lectures/*/main.pdf"),
+                key=lambda p: p.stat().st_mtime,
+                reverse=True,
+            )
+            if lecture_pdfs:
+                selected_pdf = lecture_pdfs[0]
+                source_type = "latest_lecture_fallback"
+
+        if selected_pdf is None:
+            continue
+
+        target_path = outgoing_dir / export_name(course_key)
+        shutil.copy2(selected_pdf, target_path)
         exported.append(
             {
-                "source": str(pdf_path.relative_to(repo_root)).replace("\\", "/"),
+                "source": str(selected_pdf.relative_to(repo_root)).replace("\\", "/"),
                 "export": str(target_path.relative_to(repo_root)).replace("\\", "/"),
                 "course_key": course_key,
-                "lecture_slug": lecture_slug,
+                "source_type": source_type,
             }
         )
 

@@ -1,0 +1,14 @@
+{
+  "course_key": "international-economics",
+  "lecture_title": "国际经济学：导论与学习框架",
+  "lecture_date": "2026-03-09",
+  "is_primary_output": true,
+  "source_zip": "courses/international-economics/incoming/transcripts/3.9国际经济学-文本.zip",
+  "transcript": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/transcript.txt",
+  "transcript_raw": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/transcript_raw.txt",
+  "transcript_clean": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/transcript_clean.txt",
+  "notes_export": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/notes_export.txt",
+  "handwritten_dir": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/handwritten",
+  "textbook_dir": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/sources/textbook",
+  "main_tex": "courses/international-economics/lectures/2026-03-09-intl-econ-intro/main.tex"
+}

@@ -1,0 +1,14 @@
+{
+  "course_key": "international-economics",
+  "lecture_title": "国际经济学：第一节课程转写",
+  "lecture_date": "2026-03-09",
+  "is_primary_output": false,
+  "source_zip": "courses/international-economics/incoming/transcripts/3_9国际经济学第一节-文本.zip",
+  "transcript": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/transcript.txt",
+  "transcript_raw": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/transcript_raw.txt",
+  "transcript_clean": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/transcript_clean.txt",
+  "notes_export": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/notes_export.txt",
+  "handwritten_dir": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/handwritten",
+  "textbook_dir": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/sources/textbook",
+  "main_tex": "courses/international-economics/lectures/2026-03-09-intl-econ-lecture-1/main.tex"
+}

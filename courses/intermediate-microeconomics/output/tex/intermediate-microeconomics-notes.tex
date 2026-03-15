@@ -1,0 +1,147 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{hidelinks}
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\plim}{plim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\given}{\,\middle|\,}
+
+
+
+\title{ 中级微观经济学 \\ \large 课程总笔记 }
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{讲次：2026-03-10 中级微观经济学：课程导入与基本方法}
+\textit{来源讲次：2026-03-10-intermediate-micro-intro。若原始资料包含多个时间片段，已在正文中合并。}
+
+\section{本讲概览}
+
+\begin{itemize}
+  \item 本讲首先给出微观经济学中“效率”的严格定义：帕累托有效（Pareto efficiency）。
+  \item 通过租金管制与摇号分配案例说明：非按支付意愿分配时，可能存在帕累托改进空间。
+  \item 比较完全竞争、一般垄断与完全价格歧视三种市场结构下的效率表现。
+  \item 讨论“效率”与“公平”并非同一概念，政策制定必须在两者之间做权衡。
+  \item 强调不确定性与时间维度会改变对“高效率”配置的判断。
+\end{itemize}
+
+\section{核心内容}
+
+\subsection{效率的定义：帕累托有效}
+
+在一个经济中，若不存在任何可行配置使得“至少一人更好且无人更差”，
+则该配置是帕累托有效的。
+形式化地，设当前配置为 $x$，若不存在可行 $y$ 满足
+\begin{equation}
+  u_i(y) \ge u_i(x) \ \forall i, \quad \text{且}\quad u_j(y) > u_j(x) \ \text{for some } j,
+\end{equation}
+则 $x$ 为帕累托有效。
+
+注意这个定义只处理“是否存在改进空间”，不直接回答分配是否公平。
+
+\subsection{租金管制案例：为何会低效率}
+
+课堂案例中，租金管制导致价格低于市场出清水平，进而出现超额需求并通过摇号分配。
+若中签者的估值低于未中签者，则可能存在转租或私下交易，使双方都受益。
+
+设两位消费者对同一住房估值分别为 $v_H>v_L$，
+摇号让低估值者获得住房且租金为 $r$。
+若存在转让价格 $p$ 满足
+\begin{equation}
+  v_L < p < v_H,
+\end{equation}
+则高估值者与低估值者都可改善，说明原分配并非帕累托有效。
+
+\subsection{市场结构比较}
+
+\begin{enumerate}
+  \item 完全竞争：在标准假设下，竞争均衡通常可达到帕累托有效。
+  \item 一般垄断：价格高于边际成本且可能出现产量不足，常伴随无谓损失。
+  \item 完全价格歧视垄断：从“总剩余最大化”角度可能接近有效，但分配极不均衡。
+\end{enumerate}
+
+这解释了课堂中的重要结论：
+“有效”不等于“可接受”，政策评估还必须引入公平标准。
+
+\section{推导与证明}
+
+\subsection{效率与公平的逻辑拆分}
+
+效率问题是“是否还有可行改进”，
+公平问题是“现有收益分配是否符合社会偏好”。
+
+可用社会评价函数写成
+\begin{equation}
+  W = W(u_1,\dots,u_n),
+\end{equation}
+其中不同的 $W(\cdot)$ 对应不同公平观。
+课堂强调公平缺乏唯一客观标准，因此政府在政策选择中必须显式给出价值取向。
+
+\subsection{不确定性下的效率含义}
+
+在确定性世界里，闲置资源看似低效率；
+但在存在战争、能源中断等冲击风险时，储备可提高系统韧性。
+可把问题写成期望效用比较：
+\begin{equation}
+  \max_{s} \ \E\big[U(c(s,\omega))\big],
+\end{equation}
+其中 $s$ 表示储备或冗余决策，$\omega$ 为状态变量。
+这说明“静态效率最优”未必等于“动态效率最优”。
+
+\section{经济学直觉与结论}
+
+本讲最大的训练目标，是区分三个层次：
+定义层（什么是效率）、机制层（为何会无效率）、政策层（如何在效率与公平间权衡）。
+
+微观经济学提供的是“清晰的分析语言”，
+而不是自动给出唯一政策答案。
+当引入不确定性、制度约束与长期视角后，同一政策的评价可能发生变化。
+
+\section{遗留问题}
+
+\begin{itemize}
+  \item 后续可补充福利第一定理与第二定理的严格陈述及其假设条件。
+  \item 租金管制案例可加入图形化分析（供求图与无谓损失三角形）。
+  \item 可扩展讨论行为偏差与信息不完全对“帕累托改进可实现性”的影响。
+\end{itemize}
+
+\end{document}

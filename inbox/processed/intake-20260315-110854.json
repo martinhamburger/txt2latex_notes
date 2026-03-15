@@ -1,0 +1,26 @@
+[
+  {
+    "source": "inbox/dropbox/3.9国际经济学-文本.zip",
+    "status": "routed",
+    "course": "international-economics",
+    "material_type": "transcripts",
+    "destination": "courses/international-economics/incoming/transcripts/3.9国际经济学-文本.zip",
+    "reason": "Matched course keywords with score 3. Zip appears to contain transcript text."
+  },
+  {
+    "source": "inbox/dropbox/310中级微观经济学-文本.zip",
+    "status": "routed",
+    "course": "intermediate-microeconomics",
+    "material_type": "transcripts",
+    "destination": "courses/intermediate-microeconomics/incoming/transcripts/310中级微观经济学-文本.zip",
+    "reason": "Matched course keywords with score 3. Zip appears to contain transcript text."
+  },
+  {
+    "source": "inbox/dropbox/3_9国际经济学第一节-文本.zip",
+    "status": "routed",
+    "course": "international-economics",
+    "material_type": "transcripts",
+    "destination": "courses/international-economics/incoming/transcripts/3_9国际经济学第一节-文本.zip",
+    "reason": "Matched course keywords with score 2. Zip appears to contain transcript text."
+  }
+]

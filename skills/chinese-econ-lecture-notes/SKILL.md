@@ -82,7 +82,8 @@ Every note should aim for:
 - `new_lecture.py`: create a lecture workspace and a starter `.tex` file from the bundled template.
 - `clean_transcript.py`: lightly normalize raw transcript text before drafting.
 - `intake_inbox.py`: route new files from `inbox/dropbox/` or `pdf/incoming/` into the correct course and material folders.
-- `refresh_pdf_outbox.py`: copy compiled lecture PDFs into a shallow top-level `pdf/outgoing/` folder.
+- `sync_course_notes.py`: merge lecture-level notes into one cumulative per-course note file (`output/tex/<course>-notes.tex`) and optionally compile `output/pdf/<course>-notes.pdf`.
+- `refresh_pdf_outbox.py`: copy per-course cumulative PDFs into a shallow top-level `pdf/outgoing/` folder with one file per course (`course-key.pdf`).
 
 ### references/
 

@@ -1,0 +1,199 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+  hidelinks
+}
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\plim}{plim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\given}{\,\middle|\,}
+
+% Sources:
+% - sources/source.zip
+% - sources/transcript_raw.txt
+% - sources/transcript_clean.txt
+
+
+
+\title{ 资产定价 \\ \large 课程总笔记 }
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{讲次：2026-03-12 资产定价的基本框架、利率债基础与市场摩擦}
+\textit{来源讲次：2026-03-12-pricing-framework-bonds。若原始资料包含多个时间片段，已在正文中合并。}
+
+\section{本讲概览}
+
+\begin{itemize}
+  \item 从资产价格与期望收益的负相关关系出发，回顾资产定价的三条基本路径：均衡定价、无套利定价与存在市场摩擦时的经验研究。
+  \item 通过单利、复利、连续复利和贴现因子说明货币的时间价值，并强调派息频率会影响终值。
+  \item 介绍净现值法则（NPV）与内部回报率（IRR），说明机会成本与再投资风险在投资决策中的作用。
+  \item 用利率债的票面价值、票息、到期收益率和债券价格说明债券分析的基本语言。
+  \item 最后讨论有效市场假说、交易成本、卖空限制与信息缓慢扩散，并用财报公告后的价格漂移作为典型例子。
+\end{itemize}
+
+\section{资产定价的三个基本视角}
+
+\subsection{均衡定价}
+
+均衡定价的核心是：先对投资者的偏好、风险厌恶和约束作出假设，再求解投资者对资产的需求，最后由市场出清条件决定价格。这个思路的优点在于可以从偏好和技术出发，系统地推出价格与风险溢价；缺点在于对投资者行为和市场环境的假设通常较强，在具体证券定价时未必足够贴合现实。
+
+\subsection{无套利定价}
+
+无套利定价的关键词是\textbf{复制}。如果一个未知价格的资产现金流可以被若干已知价格的资产组合精确复制，那么未知资产的价格就应当等于复制组合的成本。这个思路既能用于定价，也能用于对冲，因此是衍生品市场和相对定价分析的基础。
+
+\subsection{市场摩擦与经验资产定价}
+
+前两类方法更多关注在较理想的环境下如何为风险定价；第三类方法则强调真实金融市场存在交易成本、信息摩擦、卖空限制与投资者异质性，因此价格对信息的反应往往不是瞬时完成的。经验资产定价的重要任务，就是研究这些摩擦如何影响收益与价格的动态调整。
+
+\section{利率、计息方式与时间价值}
+
+\subsection{无风险利率与信用利差}
+
+在本讲的债券例子里，我们主要讨论政府背书的利率债，因此暂时忽略违约风险，把债券收益率视为无风险利率。若转向公司债或信用债，就需要额外补偿违约风险，这一部分补偿通常表现为信用利差。
+
+\subsection{单利、复利与连续复利}
+
+若初始本金为 $A$，年利率为 $r$，持有 $n$ 年，则：
+\begin{align}
+  FV_n^{\text{simple}} &= A(1 + rn), \\
+  FV_n^{\text{compound}} &= A\left(1 + \frac{r}{m}\right)^{mn},
+\end{align}
+其中 $m$ 表示一年内的复利次数。若采用连续复利，则有
+\begin{equation}
+  FV_n^{\text{cont}} = A e^{rn}, \qquad PV = FV \cdot e^{-rn}.
+\end{equation}
+
+派息或计息次数越多，利息越早到账，后续再投资产生的利息也越多，因此在其他条件相同的情况下，终值会更高。
+
+\subsection{贴现因子与现值}
+
+一旦承认资金具有时间价值，不同时间点的现金流就不能直接相加比较。把未来现金流折现到当前的系数就是贴现因子。在连续复利写法下，$e^{-rn}$ 可以理解为对应期限的贴现因子；资产定价的大量问题，本质上都可以表述为“如何选择合适的贴现率去折现未来现金流”。
+
+\section{投资决策法则：NPV 与 IRR}
+
+\subsection{净现值法则}
+
+若项目在时点 $t$ 的现金流为 $CF_t$，贴现率为 $r$，则净现值为
+\begin{equation}
+  NPV = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}.
+\end{equation}
+课堂上的例子是：初始投入 $100$，之后三期分别回收 $30$、$60$、$40$。判断项目是否值得投资，不能简单比较 $-100 + 30 + 60 + 40$，而必须先折现到同一时点再比较。若 $NPV > 0$，则项目回报高于机会成本，值得投资；若 $NPV < 0$，则不应投资。
+
+\subsection{内部回报率}
+
+内部回报率（IRR）是使项目净现值恰好等于零的贴现率，即
+\begin{equation}
+  0 = \sum_{t=0}^{T} \frac{CF_t}{(1+\mathrm{IRR})^t}.
+\end{equation}
+IRR 只依赖项目现金流，不直接依赖市场利率；而 NPV 需要项目现金流和贴现率共同决定。因此，IRR 适合描述项目自身的大致收益水平，NPV 更直接服务于“当前是否值得投”这一决策。
+
+\subsection{机会成本与再投资风险}
+
+课上特别强调两个点。第一，贴现率反映的是投资者的机会成本；机会成本越高，同一个项目的 NPV 越低。第二，IRR 隐含了中途现金流可以按相同回报率继续再投资的设定，因此它未必能精确代表投资者最终实际获得的回报。对于大型平台或稳定经营的机构，再投资风险较小；对普通投资者而言，这一假设往往更难满足。
+
+\subsection{分期付款案例}
+
+以京东白条分期为例，表面上的手续费率不等于真实贷款利率。更准确的做法是把平台当作“先支付全部货款、后按期收回现金流”的投资者，然后用 IRR 计算其真实回报率。这个例子说明：金融合同的表面费率与其隐含收益率并不一定相同。
+
+\section{利率债、到期收益率与债券定价}
+
+\subsection{债券的基本要素}
+
+债券分析至少要区分四个概念：票面价值、到期日、票息和市场价格。短期贴现债通常不支付票息，而是折价发行；期限较长的债券则往往需要按期支付票息，才能吸引投资者持有。
+
+\subsection{到期收益率的例子}
+
+若一年期零息债券当前价格为 $95$，一年后支付 $100$，则其到期收益率 $y_A$ 满足
+\begin{equation}
+  95 = \frac{100}{1+y_A},
+\end{equation}
+因此
+\begin{equation}
+  y_A = \frac{100}{95} - 1 \approx 5.26\%.
+\end{equation}
+
+若另一只两年期债券价格为 $97$，第一年支付票息 $5$，第二年支付本金加票息 $105$，则其到期收益率 $y_B$ 满足
+\begin{equation}
+  97 = \frac{5}{1+y_B} + \frac{105}{(1+y_B)^2},
+\end{equation}
+求得 $y_B \approx 6.65\%$。
+
+\subsection{为什么不能机械比较不同债券的 YTM}
+
+虽然上面的例子里 $y_B > y_A$，但这并不意味着任何投资者都应该直接买入第二只债券。原因至少有两个：第一，YTM 隐含再投资假设，存在再投资风险；第二，一年期债券和两年期债券的期限不同，收益率比较还涉及期限结构与远期利率问题，因此不能脱离期限维度机械排序。
+
+\subsection{债券定价}
+
+债券价格的本质仍然是未来现金流的贴现值。若债券未来现金流为 $\{CF_t\}_{t=1}^{T}$，相应期限的贴现率为 $\{r_t\}_{t=1}^{T}$，则可以写成
+\begin{equation}
+  P = \sum_{t=1}^{T} \frac{CF_t}{(1+r_t)^t}.
+\end{equation}
+因此，市场利率越高，给定现金流的现值越低；反过来，市场利率下降会抬高债券价格。这也是债券价格对利率变化格外敏感的原因。
+
+\section{市场摩擦、有效市场与信息扩散}
+
+\subsection{有效市场是假设起点，而不是终点}
+
+有效市场假说提供了一个重要基准：如果市场无摩擦、投资者能及时且正确处理全部信息，那么价格应当迅速反映信息。但是现实市场显然并非如此。交易成本、佣金、印花税、信息处理能力有限、投资者关注度不足等因素，都会让价格调整变得缓慢而不完全。
+
+\subsection{交易成本与卖空限制}
+
+课上特别指出，A 股市场并不是零成本交易市场，普通投资者在买卖股票时需要承担佣金和税费。即使单次费用看似不高，叠加到高频交易后也会显著侵蚀收益。另一方面，卖空限制意味着负面信息的价格反应往往更慢，因为投资者并不能像买入一样无约束地表达“看空”观点。
+
+\subsection{信息缓慢扩散}
+
+经验研究中的一个重要视角是：信息在市场和投资者之间的扩散是渐进的，而不是一步到位完成的。不同市场、不同资产、不同投资者群体之间存在分割，导致信息反映具有时滞。课堂上提到的经典思路，就是在放宽完全理性和瞬时传播假设后，用信息扩散来解释价格为何会持续漂移。
+
+\subsection{公告后价格漂移}
+
+财报公告后的价格漂移（post-earnings-announcement drift）是典型例子。如果公司公布的盈利信息超出市场预期，价格往往不是在公告当天一次性调整完成，而是会在之后一段时间继续缓慢上升；若公告显著低于预期，则价格也可能持续下行，而且由于卖空限制和管理层的预期管理，负面信息的调整路径可能更慢、更长。
+
+\section{遗留问题}
+
+\begin{itemize}
+  \item 下一步需要进一步区分即期利率、远期利率和期限结构，这样才能更系统地比较不同期限债券的收益率。
+  \item 本讲转写稿存在少量语音识别误差，已根据上下文校正为“无套利定价”“NPV”“IRR”等标准术语。
+  \item 若后续补充板书或课件截图，可继续把债券例子与信息扩散部分的图形化直觉补完整。
+\end{itemize}
+
+\end{document}

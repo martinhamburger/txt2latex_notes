@@ -1,0 +1,146 @@
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{hidelinks}
+
+\setlist[itemize]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=3pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.12}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\plim}{plim}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\given}{\,\middle|\,}
+
+\title{ 国际经济学 \\ \large 国际经济学：第一节课程转写 }
+\author{}
+\date{2026-03-09}
+
+\begin{document}
+
+\maketitle
+
+\section{本讲概览}
+
+\begin{itemize}
+  \item 以日本“僵尸企业”经验为参照，讨论资源错配与长期增长停滞之间的机制联系。
+  \item 从通胀/通缩与货币传导出发，说明宏观价格环境与企业盈利、居民收入之间的联动关系。
+  \item 结合研发投入与产业升级案例，讨论技术进步在增长转型中的核心作用。
+  \item 通过国家间比较（中、美、欧、日）理解创新能力、产业政策与国际竞争格局。
+  \item 在课程衔接上进入贸易分析：邻近性、经济规模与双边贸易结构。
+\end{itemize}
+
+\section{核心内容}
+
+\subsection{僵尸企业与资源错配}
+
+课堂首先讨论了“僵尸企业”问题：
+当低效率企业依靠持续输血长期存续时，资本与劳动无法流向高生产率部门，
+宏观上会表现为潜在增速下行、产业新陈代谢受阻。
+
+这一部分的关键不是“企业是否短期困难”，而是“资源是否能够完成有效重配”。
+若地方激励与预算约束扭曲，可能出现“低效率存量被维持、高效率增量进入受阻”的结构。
+
+\subsection{通缩压力与货币传导}
+
+课程强调了一个常见误区：
+价格水平走低对消费者短期可能有利，但若通缩预期固化，企业利润和工资增长会承压，
+进而反馈到就业和需求，形成负向循环。
+
+把这一逻辑写成数量关系可用
+\begin{equation}
+  M V = P Y,
+\end{equation}
+其中 $M$ 为货币供给，$V$ 为货币流通速度，$P$ 为价格水平，$Y$ 为实际产出。
+即使 $M$ 扩张，若传导不畅导致 $V$ 下降，也可能出现“货币增加但价格压力不强”的现象。
+
+\subsection{研发投入、产业升级与增长质量}
+
+课堂材料把研发投入占 GDP 比重、企业创新能力和产业前沿位置联系在一起。
+核心信息是：当传统要素驱动边际减弱时，增长质量更依赖技术进步与新产业扩散。
+
+从国际比较看，创新能力并不只体现在“是否有高投入”，
+还体现在“能否把投入转化为可扩散的产品、工艺与组织能力”。
+因此，政策重点不应停留在投入规模本身，还需要关注创新生态与制度配套。
+
+\subsection{短期效率与长期韧性}
+
+课堂提到一个重要方法论：
+某些安排在静态上看似“低效率”（如战略储备、冗余能力），
+但在高不确定性环境下可能提高系统韧性。
+
+这提示我们在评价政策时要区分：
+短期静态效率与长期动态效率，
+并把外部冲击风险纳入分析，而非只看单期最优。
+
+\section{推导与证明}
+
+\subsection{从“近邻贸易”到引力机制}
+
+课程后段转入贸易伙伴结构。经验上可写成引力形式：
+\begin{equation}
+  \ln X_{ij} = c + a\ln Y_i + b\ln Y_j - d\ln D_{ij} + \varepsilon_{ij},
+\end{equation}
+其中 $d>0$ 反映距离与贸易成本的抑制作用。
+这与课堂讨论“邻近国家往往是重要贸易伙伴”一致，也解释了为何区域一体化政策会显著影响贸易流。
+
+课堂案例中还强调了一个互补事实：
+即使地理距离较远，若产业链深度嵌合、制度与物流成本较低，双边贸易仍可维持高水平。
+因此，距离不是唯一决定因素，而是与市场规模、制度摩擦、产业互补共同作用。
+
+\subsection{通缩环境下的需求约束（简化表述）}
+
+在通缩压力下，企业利润和居民收入预期走弱，
+会通过消费与投资意愿下降反馈到总需求。可用简单恒等式表示：
+\begin{equation}
+  Y = C + I + G + NX.
+\end{equation}
+
+当 $C$ 和 $I$ 同时承压时，即便外需改善，整体增长也可能受限。
+这就是课堂中“稳增长不能只看单一指标”的机制基础。
+
+\section{经济学直觉与结论}
+
+本讲相对导论的增量在于“案例化机制”：
+把僵尸企业、通缩压力、研发投入、贸易伙伴结构放到同一框架中观察，
+可看到增长问题并非单部门问题，而是“企业行为-宏观需求-国际分工”的联动结果。
+
+因此，政策讨论需要同时覆盖三层：
+短期稳定（需求与预期）、
+中期重配（低效产能出清与新产业进入）、
+长期竞争力（技术与制度能力）。
+
+\section{遗留问题}
+
+\begin{itemize}
+  \item 需在后续讲义中补充“僵尸企业”可操作判别标准与跨国可比口径。
+  \item 课堂中关于研发 50 强企业与产业分布的比较，建议补入表格化证据。
+  \item 贸易伙伴结构部分可进一步结合行业维度，区分中间品贸易与最终品贸易。
+\end{itemize}
+
+\end{document}

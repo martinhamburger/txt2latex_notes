@@ -57,6 +57,20 @@ For most lectures, use this order:
 
 For short lectures, merge sections. For technical lectures, split assumptions and derivations more aggressively.
 
+## Single-File Course Policy
+
+- Each course must maintain a single cumulative note file in `courses/<course-key>/output/tex/<course-key>-notes.tex`.
+- New lecture materials (even on future dates) should be appended as new sections/subsections inside the same course note file.
+- If source segments come from different timestamps, note the timestamp briefly inside the document body, not in filenames.
+- Recommended command: `python skills/chinese-econ-lecture-notes/scripts/sync_course_notes.py --course <course-key> --compile`.
+
+## PDF Export and Naming
+
+- Compile the cumulative course note PDF to `courses/<course-key>/output/pdf/<course-key>-notes.pdf`.
+- Export to top-level outbox with `scripts/refresh_pdf_outbox.py`.
+- Outbox filenames must use `course-key.pdf` so there is exactly one exported note file per course.
+- If re-exporting a full batch, prefer `scripts/refresh_pdf_outbox.py --clean` to keep `pdf/outgoing/` and `pdf/outgoing/index.json` in sync.
+
 ## When to Use External OCR Tools
 
 Use external OCR only when it meaningfully reduces ambiguity:

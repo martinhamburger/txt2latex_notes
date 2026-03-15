@@ -1,0 +1,13 @@
+{
+  "course_key": "intermediate-microeconomics",
+  "lecture_title": "中级微观经济学：课程导入与基本方法",
+  "lecture_date": "2026-03-10",
+  "source_zip": "courses/intermediate-microeconomics/incoming/transcripts/310中级微观经济学-文本.zip",
+  "transcript": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/transcript.txt",
+  "transcript_raw": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/transcript_raw.txt",
+  "transcript_clean": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/transcript_clean.txt",
+  "notes_export": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/notes_export.txt",
+  "handwritten_dir": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/handwritten",
+  "textbook_dir": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/sources/textbook",
+  "main_tex": "courses/intermediate-microeconomics/lectures/2026-03-10-intermediate-micro-intro/main.tex"
+}

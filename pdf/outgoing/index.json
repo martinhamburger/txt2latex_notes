@@ -1,8 +1,20 @@
 [
   {
-    "source": "courses/asset-pricing/lectures/2026-03-12-pricing-framework-bonds/main.pdf",
-    "export": "pdf/outgoing/asset-pricing--2026-03-12-pricing-framework-bonds.pdf",
+    "source": "courses/asset-pricing/output/pdf/asset-pricing-notes.pdf",
+    "export": "pdf/outgoing/asset-pricing.pdf",
     "course_key": "asset-pricing",
-    "lecture_slug": "2026-03-12-pricing-framework-bonds"
+    "source_type": "course_notes"
+  },
+  {
+    "source": "courses/intermediate-microeconomics/output/pdf/intermediate-microeconomics-notes.pdf",
+    "export": "pdf/outgoing/intermediate-microeconomics.pdf",
+    "course_key": "intermediate-microeconomics",
+    "source_type": "course_notes"
+  },
+  {
+    "source": "courses/international-economics/output/pdf/international-economics-notes.pdf",
+    "export": "pdf/outgoing/international-economics.pdf",
+    "course_key": "international-economics",
+    "source_type": "course_notes"
   }
 ]
