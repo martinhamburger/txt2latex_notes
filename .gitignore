@@ -14,4 +14,14 @@ __pycache__/
 *.synctex.gz
 *.toc
 *.xdv
+
+# Generated note artifacts
+courses/*/lectures/*/main.pdf
+courses/*/output/pdf/*.pdf
+pdf/outgoing/*.pdf
+pdf/outgoing/index.json
+
+# Local editor settings
+.vscode/
+
 Thumbs.db
